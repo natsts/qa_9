@@ -4,11 +4,19 @@ from model.elements.dropdown import select_option
 from model.elements.datepicker import date_of_birth
 from model.elements.check_box import hobby
 from utils.path import path
-from selene import have
+from selene import have, command
 
 
 def open_form():
     browser.open('https://demoqa.com/automation-practice-form')
+
+    ads = browser.all('[id^=google_ads_][id$=container__]')
+    google_uploads = browser.all("[id^=google_uploaded_]")
+
+    if ads.wait.until(have.size_greater_than_or_equal(3)):
+        ads.perform(command.js.remove)
+    if google_uploads.wait.until(have.size_greater_than_or_equal(1)):
+        google_uploads.perform(command.js.remove)
 
 
 def fill_contact_fields(name, last_name, email, phone):

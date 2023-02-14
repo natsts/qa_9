@@ -2,7 +2,6 @@ from model.page import practice_form
 
 
 def test_practise_form(size_browser):
-
     practice_form.open_form()
 
     practice_form.fill_contact_fields('Test', 'Testovych', 'test123@mail.ru', '9617778558')
@@ -21,8 +20,8 @@ def test_practise_form(size_browser):
 
     practice_form.add_address('Moscow')
 
-    practice_form.select_state('Rajasthan')
-    practice_form.select_city('Jaipur')
+    practice_form.select_state('NCR')
+    practice_form.select_city('Delhi')
 
     practice_form.submit()
 
@@ -37,5 +36,5 @@ def test_practise_form(size_browser):
         'Reading',
         'cat.jpg',
         'Moscow',
-        'Rajasthan Jaipur'
+        'NCR Delhi'
     )
