@@ -1,2 +1,3 @@
-selene == 2.0.0b5
+selene == 2.0.0b15
 pytest == 7.2.1
+selenium~=4.2.0
