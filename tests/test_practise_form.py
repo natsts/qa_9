@@ -1,6 +1,6 @@
 import allure
 from allure_commons.types import Severity
-from selene.support import webdriver
+from selenium import webdriver
 from selene.support.shared import browser
 from selenium.webdriver.chrome.options import Options
 from demoqa_tests.model.page.practice_form import PracticeForm, open_form
@@ -21,6 +21,7 @@ def test_practise_form(size_browser):
             "enableVideo": True
         }
     }
+
     options.capabilities.update(selenoid_capabilities)
     driver = webdriver.Remote(
         command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
