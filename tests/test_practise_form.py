@@ -5,6 +5,7 @@ from selene.support.shared import browser
 from selenium.webdriver.chrome.options import Options
 from demoqa_tests.model.page.practice_form import PracticeForm, open_form
 from demoqa_tests.model.user import test_user
+from demoqa_tests.utils import attach
 
 
 @allure.tag("web")
@@ -35,8 +36,8 @@ def test_practice_form(size_browser):
     user_data.assert_fields()
 
 
-attach.add_html(browser)
-attach.add_screenshot(browser)
-attach.add_logs(browser)
-attach.add_video(browser)
-browser.quit()
+    attach.add_html(browser)
+    attach.add_screenshot(browser)
+    attach.add_logs(browser)
+    attach.add_video(browser)
+    browser.quit()
